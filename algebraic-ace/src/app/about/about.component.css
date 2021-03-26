@@ -1,0 +1,331 @@
+body {
+  font-family: "Inconsolata";
+}
+.text_1 {
+  animation: text1;
+}
+.text_2 {
+  animation: text2;
+}
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(20s, end);
+  animation-iteration-count: infinite;
+}
+.text_1::after, .text_2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  
+  60%, 90% {
+    width: 7em;
+  }
+}
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 7em;
+  }
+}
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+#manuel {
+  width: 50%;
+  margin-top: 10rem; 
+  border-radius: 50%;
+  border: black 10px solid;
+}
+#contact-me {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+#about-me {
+  color: white;
+  margin-top: 10rem;
+  margin-right: 15rem;
+} 
+#about-me-col {
+  width: 50%
+}
+#python {
+  margin-top: 30px;
+  width: 30%;
+  margin-bottom: 100px;
+  height: 30%;
+  opacity: 0.5;
+}
+#python:hover {
+  opacity: 1.0;
+}
+#js {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 60%;
+  opacity: 0.5;
+}
+#js:hover {
+  opacity: 1.0;
+}
+#section-2 {
+  background-color: #625e8d;
+  border-top: black 5px solid;
+  padding: 100px;
+}
+#about-AA {
+  color: white;
+  margin-left: 20rem;
+
+}
+#about-AA-col {
+  width: 50%
+}
+#AA-logo {
+  width: 40%;
+  margin-left: 14rem;
+  margin-bottom: 50px;
+  animation-name: animate-logo;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes animate-logo {
+  0% { transform: translateX(0,  0px); transform: scale(1,1);}
+  50%  { transform: translateY(0, -10px);  transform: scale(1.15,1.15);}
+}
+#section-3 {
+  background-color: #6699CC;
+  border-top: black 5px solid;
+  padding: 100px;
+}
+#git {
+  width: 75%
+} 
+#git-col {
+  width: 50%}
+#linkedin {
+  width: 75%
+}
+.card {
+  color: white;
+  background-color: #625e8d;
+  border: 5px solid black;
+  border-radius: 15px;
+  height: 550px;
+  padding: 34px;
+  text-align: center;
+  width: 50%;
+  opacity: 0.5;
+}
+.card-body:hover > .card {
+  animation-name: move-card;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  opacity: 1.0;
+}
+.card-body:hover {
+  animation-name: move-card;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  opacity: 1.0;
+}
+@keyframes move-card {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, -10px); }   
+}
+@media screen and (max-width: 1750px) {
+  #about-AA-col {
+    width: 60%
+  }
+  #about-AA {
+    margin-left: 2rem;
+  }
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 50%;
+    opacity: 0.5;
+  }
+}
+@media screen and (max-width: 1550px){
+  #manuel {
+    width: 50%;
+    margin-top: 5rem; 
+    border-radius: 50%;
+    border: black 10px solid;
+  }
+  #about-me {
+    color: white;
+    margin-top: 5rem;
+    margin-left: 15rem;
+  } 
+  #about-me-col {
+    width:100%;
+  }
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 80%;
+    opacity: 0.5;
+  }
+  #about-AA-col {
+    width: 100%
+  }
+  #about-AA {
+    margin-left: 5rem;
+  }
+  #AA-logo {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  #git-col {
+    width: 100%;
+  }
+  #git {
+    width: 60%
+  } 
+  #linkedin {
+    width: 60%
+  }
+}
+@media screen and (max-width: 1400px ){
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 70%;
+    opacity: 0.5;
+  }
+
+}
+@media screen and (max-width: 1300px ){
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 60%;
+    opacity: 0.5;
+  }
+
+}
+@media screen and (max-width: 1200px ){
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 55%;
+    opacity: 0.5;
+  }
+
+}
+@media screen and (max-width: 1100px ){
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 45%;
+    opacity: 0.5;
+  }
+
+}
+@media screen and (max-width: 930px ){
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 40%;
+    opacity: 0.5;
+  }
+  #python {
+    margin-top: 30px;
+    width: 40%;
+    margin-bottom: 100px;
+    height: 40%;
+  }
+  .card {
+    width: 100%
+  } 
+}
+@media screen and (max-width: 770px){
+  #python {
+    margin-top: 30px;
+    width: 50%;
+    margin-bottom: 100px;
+    height: 50%;
+  }
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 50%;
+    opacity: 0.5;
+  }
+  #about-me {
+    margin-left: 8rem;
+    width: 70%
+  }
+  #about-AA {
+    margin-left: 3rem;
+    width: 80%
+  }
+  .card {
+    width: 100%
+  } 
+}
+@media screen and (max-width: 425px){
+  #python {
+    margin-top: 30px;
+    width: 50%;
+    margin-bottom: 100px;
+    height: 50%;
+  }
+  #js {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 50%;
+    opacity: 0.5;
+  }
+  #about-me {
+    margin-left: 3rem;
+    width: 80%
+  }
+  #about-AA {
+    margin-left: 2rem;
+    width: 100%
+  }
+  #AA-logo {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .card {
+    display: block;
+    margin-left: 200px;;
+    width: 250px;
+  } 
+}
+
+/*  Purple: 8D8AB2
+    Blue: 6699CC
+*/

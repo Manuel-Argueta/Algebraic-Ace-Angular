@@ -1,0 +1,72 @@
+.preview {
+    width:50%;
+    border-radius: 50%;
+    border: black 10px solid;
+}
+select {
+    background-color: seashell;
+}
+#title {
+ border-bottom: 2px black solid;
+ background-color: #8D8AB2;
+}
+#filter-box h5{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+
+}
+#filter-box button {
+    background-color: black;
+    margin-bottom: 30px;
+}
+body {
+    border-bottom: 2px black solid;
+    font-family: "Inconsolata";
+    background-image: url('../../assets/math-sign-bg.png');
+    background-image: cover;
+    background-size: 50vh;
+}
+.video-preview {
+    width: 400px;
+    height: 300px;
+}
+.card {
+    border: black 5px solid;
+    background-color: #8D8AB2;
+    font-size: 20px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: underline;
+    color: black;
+    font-size: 25px;
+}
+@media screen and (max-width: 780px) {
+    .video-preview {
+        width: 350px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 570px) {
+    .video-preview {
+        width: 250px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .video-preview {
+        width: 200px;
+        height: 150px;
+    }
+}
+@supports (font-variation-settings: "wght" 900) {
+    #title h2, .card {
+      font-family: 'Inconsolata';
+      font-weight: 900;
+    }
+  }
+/*  Purple: 8D8AB2
+    Blue: 6699CC
+*/

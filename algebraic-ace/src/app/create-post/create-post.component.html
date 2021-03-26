@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap');</style>
+</head>
+
+<body>
+  <div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <div class="card p-5 text-center">
+            <h1 class="page-title"><b>Create A Math Post!<img id = "hand-icon" src = "../../assets/writing-hand.png"></b></h1>
+            <h3>Share With The Algebraic Ace Community
+              Your Math Experiences!</h3>
+            <h5 class = "mb-3">You can share anything new you've learned
+              or anything you find interesting!</h5>
+            <form [formGroup]="createPost" (ngSubmit)="createNewPost()">
+              <div class="form-group">
+                <input type="text" class="form-control mb-3" placeholder="Header" formControlName="title">
+                <input type="text" class="form-control mb-3" placeholder="Author" formControlName="author">
+                <textarea type="text" rows="5" cols="33" class="form-control mb-2" placeholder="Post"
+                  formControlName="content" ></textarea>
+              </div>
+              <div class = "text-center">
+              <button type="submit" class="btn-block btn-lg btn-dark ">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col">
+        <div class="card p-5">
+          <h1 class= "page-title text-center"><b>Want To Challenge Other Algebraic Ace Members?</b></h1>
+          <h4 class = "text-center mt-1">Create Your Own Problem Of The Day HERE!</h4>
+          <div class = "text-center mt-1 mb-3">
+          <button class="btn btn-danger mx-auto" 
+          ngbDropdownItem (click)="openPODExample(content)">P.O.D Guidlines and Example</button>
+          </div>
+          <form [formGroup]="createPOD" (ngSubmit)="createNewPOD()">
+            <div class="form-group">
+              <input type="text" class = "form-control mb-3"placeholder="Problem" formControlName="problem">
+              <textarea type="text" rows="5" cols="33" class="form-control mb-2" placeholder="Problem Description"
+                formControlName="description"></textarea>
+                <input type="text" class="form-control mb-3" placeholder="Solution" formControlName="solution">
+            </div>
+            <label class="mr-sm-2 ml-2 mb-3 h6" for="attempts"><b>Select Attempts: </b></label>
+            <select class="form-select mr-sm-3 ml-3" id = "attempts" formControlName = "attempts">
+              <option selected>Choose...</option>
+              <option value = 1>1</option>
+              <option value = 2>2</option>
+              <option value = 3>3</option>
+              <option value = 4>4</option>
+              <option value = 5>5</option>
+            </select>
+            <div class = "text-center">
+              <button type="submit" class="btn-block btn-lg btn-dark ">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title text-center">Problem Of The Day Guidelines</h4>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3">
+      <ul>
+        <li> Make Problems <b>SOLVABLE.</b><br>(We Don't Want To Stress Anyone OUT!)</li>
+        <li> Don't use innapropriate language in your descriptions</li>
+        <li> Do not enter problems with complicated answers formats.
+           EX. Inetgrals, Derivatives, Sigma Notation . . . etc. </li>
+        <li>Solutions are <b>CASE-SENSITIVE. Make sure not to add unneccesary spaces or 
+            characters.</b></li>
+        <li> Have Fun With The Problems!</li>
+      </ul>
+      </div>
+      <div class = "text-center">
+        <h4>Example</h4>
+        <h5> Problem: 2x + 25 = 5</h5>
+        <h6> Description: Find x. Enter the value of x as an integer.</h6>
+        <h6> Solution: -10</h6>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dark" (click)="modal.close()">Done</button>
+    </div>
+  </ng-template>
+
+</body>
+<html>

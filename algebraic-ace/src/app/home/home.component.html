@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap');</style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      </head>
+    <body>
+      <div id = "progress-bar" >
+      <span>
+      <mat-progress-bar color = "primary" mode="determinate" value="{{problemStreak}}"></mat-progress-bar>
+      </span>
+    </div>    
+      <div class="row">
+            <div id = "section1" >
+                <div id = "posts" class="card text-center">
+                    <div class="card-body">
+                      <h2 class="card-title mb-3"><img id = "math-gif-1" src = "https://i.giphy.com/media/9mngjSbUyvBao/giphy.webp">
+                        <u>Algebraic Ace Math Posts</u><img id = "math-gif-2" src = "https://i.giphy.com/media/9mngjSbUyvBao/giphy.webp"></h2>
+                      <div class = "card ml-5 mr-5 mb-4 p-3">
+                        <h3 class="card-text mt-3">{{recentPosts[i]?.title}}</h3>
+                        <hr>
+                        <h4 class="card-text mb-4">{{recentPosts[i]?.content}}</h4>
+                        <h5 class="card-text mb-2">Made By: <h4>{{recentPosts[i]?.author}}</h4></h5>
+                        <h5 class="card-text"><b>Date Posted: </b> {{postDate}}</h5>
+                        <h5 class="card-text mb-2"><img id = "heart" src = "../../assets/heart.png">{{recentPosts[i]?.likes}}</h5>
+                        <div>
+                        <button id= "like-btn" class = "btn-dark" (click)= "updatePostLikes()">Like</button>
+                        </div>
+                      </div>
+                        <div class="col mx-auto">
+                          <button class = "btn-sm scroll btn-dark" (click) = "scrollLeft()"><img id = "scroll-left" src="../../assets/left-scroll.png"></button>
+                          <button class = "btn-sm scroll btn-dark"(click) = "scrollRight()"><img id = "scroll-right"src="../../assets/right-scroll.png"></button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col">
+                <div id = "problems" class="card text-center" >
+                    <div class="card-body">
+                      <h3 class="card-title mb-3"><u>Problem Of The Day</u></h3>
+                      <h3 class="card-text">{{problems[j]?.problem}}</h3>
+                      <h4 class="card-text">{{problems[j]?.description}}</h4>
+                      <h4> Attempts Remaining: <b id = "attempts">{{problemAttempts}}</b></h4>
+                      <form *ngIf = "userAnswer" [formGroup]="userAnswer">
+                            <input type="text" class="mx-auto form-control mb-3" placeholder="Solution" formControlName="solution">
+                        <div class = "text-center">
+                          <button type="submit" (click) = "checkUserAnswer()" class="btn btn-dark ">Submit</button>
+                          <button class="btn btn-danger ml-3" (click) = "skipProblem()">Skip Problem</button>
+                          </div>
+                      </form>
+                      <h3 class = "mt-2" >Your <b>AlgXP</b> <b>: {{userXP}}</b></h3>
+                    </div>
+                  </div>
+                
+                  <div id = "facts" class="card text-center">
+                    <div class="card-body">
+                      <h3 class="card-title mb-3">
+                        <img id = "question1" src = '../../assets/question-mark.png'>
+                        Fact Of The Day
+                        <img id = "question2" src = '../../assets/question-mark.png'></h3>
+                      <p id = "fact-text" class="card-text mb-3">{{mathFact}}</p>
+                      <button class= "btn btn-dark" (click) = "getNewFact()">New Fact!</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </body>
+</html>

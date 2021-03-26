@@ -1,0 +1,34 @@
+input, textarea {
+    background-color: seashell;
+}
+.btn-danger, .btn-dange:hover, .btn-danger:focus, .btn-danger.focus,.btn-danger:not(:disabled):not(.disabled):active {
+    color: white;
+    border: 2px #355d85 solid; 
+    border-color: #355d85;
+    background-color: #6699CC;
+    box-shadow: 0 0 0 0.2rem rgb(50, 93, 136,0.7);
+}
+.card {
+    border: 3px black solid;
+    background-color: #8D8AB2;
+    border-radius: 15px;
+}
+#hand-icon {
+    width: 50px;
+    margin-left: 20px;
+    margin-bottom: 15px;;
+}
+body {
+    font-family: "Inconsolata";
+}
+#attempts {
+    border: 2px black solid;
+    border-radius: 15px;;
+}
+.card label {
+    font-size: 20px;
+
+}
+/*  Purple: 8D8AB2
+    Blue: 6699CC
+*/

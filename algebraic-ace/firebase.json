@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "algebraic-ace-b59a6",
+    "public": "dist/algebraic-ace",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

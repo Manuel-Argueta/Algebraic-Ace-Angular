@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap');</style>
+      </head>
+    <body>
+        <div id = "title" class = "card text-center p-4">
+        <h1><b>Need Math Resources? You Came to The Right Place!</b></h1>
+        </div>
+        <div id = "filter-box" class="container">
+            <div class="row">
+              <div class="col-7 mx-auto mt-4">
+                <form >
+                <h5>Choose A Subject To Filter Your Search!</h5>
+                <select  [formControl] = "filterChoice" class="form-control mb-3 mt-3" >
+                    <option value = "algebra">Algebra</option>
+                    <option value = "algebra2">Algebra 2</option>
+                    <option value = "geometry">Geometry</option>
+                    <option value = "trigonometry">Trigonometry</option>
+                    <option value = "pre-calculus">Pre-Calculus</option>
+                    <option value = "calculus">Calculus AB/BC</option>
+                    <option value = "puzzles">Math Puzzles</option>
+                </select>
+                <div class = " text-center">
+                    <button (click) = "getAllFilteredResources()" type = "submit" class = "btn btn-dark col-6 text-center">Search</button>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          <div class = "container text-center">
+            <div class = "row">
+            <div class = "col">
+            <ul *ngFor = "let v of videos">
+              <div class="card mr-5 mt-4 mb-4">
+                  <div class="card-body">
+                    <iframe class = "video-preview"
+                      [src]="v.videolink | safe: 'resourceUrl'"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                   allowfullscreen>
+                    </iframe>
+                    <p class="card-text">{{v.videodescription}}</p>
+                  </div>
+              </div>
+              </ul>
+            </div>
+            <div class = "col">
+              <ul *ngFor = "let w of webpages">
+                <div class="card mr-5 mt-4 mb-4">
+                    <div class="card-body">
+                      <img class = "preview" src = "{{w.webpreview}}"><br>
+                      <a href="{{w.weblink}}" target="_blank">Visit Them Here!</a>
+                      <p class="card-text">{{w.webdescription}}</p>
+                    </div>
+                </div>
+                </ul>
+              </div>
+            </div>
+            </div>
+    </body>
+</html>

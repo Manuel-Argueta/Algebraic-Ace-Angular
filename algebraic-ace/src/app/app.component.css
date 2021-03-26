@@ -1,0 +1,12 @@
+.navbar {
+    background-color: black;
+    color: white;
+    font-family: "Inconsolata";
+}
+
+
+.navbar-brand{
+    font-size: 25px;
+    margin-left: 20px;
+    color: white;
+}
